@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { enhance, applyAction } from "$app/forms";
 	import { page } from "$app/stores";
+	import { Button } from "$lib/components/ui/button";
 	import type { SubmitFunction } from "@sveltejs/kit";
+	import { Loader } from "lucide-svelte";
 
 	const fieldError = (liveForm: FormAccountUpdateResult, name: string) => {
 		let errors = liveForm?.errorFields ?? [];
@@ -47,7 +49,7 @@
 	};
 </script>
 
-<div class="card mt-8 flex max-w-xl flex-col p-6 pb-7 shadow md:flex-row">
+<div class="mt-8 flex max-w-xl flex-col p-6 pb-7 shadow md:flex-row">
 	{#if title}
 		<div class="mb-3 w-48 flex-none text-xl font-bold">{title}</div>
 	{/if}
@@ -75,7 +77,7 @@
 				</div>
 			{/if}
 			<form
-				class="form-widget flex flex-col"
+				class="flex flex-col"
 				method="POST"
 				action={formTarget}
 				use:enhance={handleSubmit}
@@ -116,32 +118,28 @@
 
 				{#if editable}
 					<div>
-						<button
+						<Button
 							type="submit"
-							class="btn btn-sm ml-auto mt-3 min-w-[145px] {dangerous
-								? 'btn-error'
-								: 'btn-success'}"
-							disabled={loading}
+							variant={dangerous ? "destructive" : "secondary"}
+							class="ml-auto mt-3 min-w-[145px]"
 						>
 							{#if loading}
-								<span
-									class="loading loading-spinner loading-md mx-3 align-middle"
-								></span>
+								<Loader class="mx-3 align-middle" />
 							{:else}
 								{saveButtonTitle}
 							{/if}
-						</button>
+						</Button>
 					</div>
 				{:else}
 					<!-- !editable -->
 					<a href={editLink} class="mt-1">
-						<button
-							class="btn btn-outline btn-sm {dangerous
-								? 'btn-error'
-								: ''} min-w-[145px]"
+						<Button
+							type="submit"
+							variant={dangerous ? "destructive" : "secondary"}
+							class="ml-auto mt-3 min-w-[145px]"
 						>
 							{editButtonTitle}
-						</button>
+						</Button>
 					</a>
 				{/if}
 			</form>

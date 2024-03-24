@@ -41,22 +41,6 @@
 />
 
 <SettingsModule
-	title="Email"
-	editable={false}
-	fields={[{ id: "email", initialValue: session?.user?.email || "" }]}
-	editButtonTitle="Change Email"
-	editLink="/home/settings/change_email"
-/>
-
-<SettingsModule
-	title="Password"
-	editable={false}
-	fields={[{ id: "password", initialValue: "••••••••••••••••" }]}
-	editButtonTitle="Change Password"
-	editLink="/home/settings/change_password"
-/>
-
-<SettingsModule
 	title="Danger Zone"
 	editable={false}
 	dangerous={true}
