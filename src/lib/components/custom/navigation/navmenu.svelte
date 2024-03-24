@@ -59,14 +59,11 @@
 			</div>
 		</DropdownMenu.Label>
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item
-			on:click={handleSignOut}
-			class="hover:cursor-pointer"
-		>
+		<DropdownMenu.Item href="/account/billing" class="hover:cursor-pointer">
 			Billing
 		</DropdownMenu.Item>
 		<DropdownMenu.Item
-			on:click={handleSignOut}
+			href="/account/settings"
 			class="hover:cursor-pointer"
 		>
 			Account
@@ -75,7 +72,7 @@
 
 		<DropdownMenu.Separator />
 		<DropdownMenu.Item
-			on:click={handleSignOut}
+			href="/account/sign_out"
 			class="hover:cursor-pointer"
 		>
 			Log Out

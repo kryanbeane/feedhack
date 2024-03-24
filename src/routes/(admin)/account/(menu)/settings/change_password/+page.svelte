@@ -12,7 +12,6 @@
 
 	// True if definitely has a password, but can be false if they
 	// logged in with oAuth or email link
-
 	// @ts-expect-error: we ignore because Supabase does not maintain an AMR typedef
 	let hasPassword = session?.user?.amr?.find((x) => x.method === "password")
 		? true
@@ -45,7 +44,7 @@
 	<title>Change Password</title>
 </svelte:head>
 
-<h1 class="text-2xl font-bold mb-6">Change Password</h1>
+<h1 class="mb-6 text-2xl font-bold">Change Password</h1>
 
 {#if hasPassword}
 	<SettingsModule
@@ -77,9 +76,7 @@
 		]}
 	/>
 {:else}
-	<div
-		class="card p-6 pb-7 mt-8 max-w-xl flex flex-col md:flex-row shadow max-w-md"
-	>
+	<div class="card mt-8 flex max-w-md flex-col p-6 pb-7 shadow md:flex-row">
 		<div class="flex flex-col gap-y-4">
 			{#if usingOAuth}
 				<div class="font-bold">Set Password By Email</div>

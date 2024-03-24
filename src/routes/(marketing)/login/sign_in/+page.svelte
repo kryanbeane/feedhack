@@ -4,6 +4,7 @@
 	import { goto } from "$app/navigation";
 	import { onMount } from "svelte";
 	import { page } from "$app/stores";
+	import Button from "$lib/components/ui/button/button.svelte";
 
 	export let data;
 	let { supabase } = data;
@@ -21,6 +22,24 @@
 			}
 		});
 	});
+	const handleSignIn = async () => {
+		console.log("Sign in with Google", location.origin);
+		await supabase.auth
+			.signInWithOAuth({
+				provider: "google",
+				options: {
+					redirectTo: `${data.url}/auth/callback`,
+					queryParams: {
+						access_type: "offline",
+						prompt: "consent",
+					},
+				},
+			})
+			.catch((err) => {
+				console.log("Login error", err);
+				throw err;
+			});
+	};
 </script>
 
 <svelte:head>
@@ -45,6 +64,13 @@
 	</div>
 {/if}
 <h1 class="mb-6 text-2xl font-bold">Sign In</h1>
+<Button
+	variant="default"
+	type="button"
+	class="flex items-center justify-center"
+	on:click={handleSignIn}
+	>New Google Signin
+</Button>
 <Auth
 	supabaseClient={data.supabase}
 	view="sign_in"
@@ -59,3 +85,4 @@
 	Don't have an account? <a class="underline" href="/login/sign_up">Sign up</a
 	>.
 </div>
+<!-- redirectTo={`https://jsnmvywebfzrolwnzyax.supabase.co/auth/v1/callback`} -->
