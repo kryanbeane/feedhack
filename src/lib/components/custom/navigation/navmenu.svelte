@@ -6,7 +6,7 @@
 	import { goto } from "$app/navigation";
 	import { toggleMode } from "mode-watcher";
 	import FeedbackPopover from "./feedback-popover.svelte";
-	import type { PageData } from "../../../../routes/(admin)/home/(menu)/$types";
+	import type { PageData } from "../../../../routes/(app)/home/(settings)/$types";
 	export let data: PageData;
 
 	let { supabase } = data;
