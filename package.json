@@ -15,6 +15,7 @@
     "format_check": "prettier --check --plugin prettier-plugin-svelte ./src"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.30.4",
     "@tailwindcss/typography": "^0.5.10",
@@ -30,7 +31,9 @@
     "prettier": "^3.0.3",
     "prettier-plugin-svelte": "^3.0.3",
     "prettier-plugin-tailwindcss": "^0.5.9",
-    "svelte": "^4.0.5",
+    "rollup": "^4.13.0",
+    "rollup-plugin-svelte": "^7.2.0",
+    "svelte": "^4.2.12",
     "svelte-check": "^3.4.3",
     "tailwindcss": "^3.3.6",
     "typescript": "^5.4.3",

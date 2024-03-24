@@ -6,16 +6,11 @@
 	import { goto } from "$app/navigation";
 	import { toggleMode } from "mode-watcher";
 	import FeedbackPopover from "./feedback-popover.svelte";
-	import type { PageData } from "../../../../routes/(app)/home/(settings)/$types";
+	import type { PageData } from "../../../../routes/(app)/home/(pages)/$types";
 	export let data: PageData;
 
 	let { supabase } = data;
 	$: ({ supabase } = data);
-
-	const handleSignOut = async () => {
-		await supabase.auth.signOut();
-		goto("/auth", { invalidateAll: true });
-	};
 
 	// Info for the dropdown menu
 	$: user = data.session?.user;
