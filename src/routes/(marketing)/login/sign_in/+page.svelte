@@ -22,7 +22,6 @@
 			}
 		});
 	});
-
 	const handleSignIn = async () => {
 		console.log("Sign in with Google", location.origin);
 		await supabase.auth
@@ -65,7 +64,6 @@
 	</div>
 {/if}
 <h1 class="mb-6 text-2xl font-bold">Sign In</h1>
-
 <Button
 	variant="default"
 	type="button"

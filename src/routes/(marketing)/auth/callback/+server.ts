@@ -18,9 +18,6 @@ export const GET = async ({ url, locals: { supabase } }) => {
 			}
 		}
 	}
-
-	console.log("i got here 1");
-
 	const next = url.searchParams.get("next");
 	if (next) {
 		throw redirect(303, next);
