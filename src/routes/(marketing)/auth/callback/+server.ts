@@ -23,5 +23,5 @@ export const GET = async ({ url, locals: { supabase } }) => {
 		throw redirect(303, next);
 	}
 
-	throw redirect(303, "/account");
+	throw redirect(303, "/home");
 };

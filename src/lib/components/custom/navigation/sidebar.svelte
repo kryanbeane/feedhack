@@ -10,7 +10,7 @@
 	export { className as class };
 
 	let library: { href: string; title: string; icon: any }[] = [
-		{ href: "/account", title: "Home", icon: HomeIcon },
+		{ href: "/home", title: "Home", icon: HomeIcon },
 	];
 
 	const [send, receive] = crossfade({

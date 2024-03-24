@@ -90,7 +90,7 @@
 							</div>
 						{:else}
 							<a
-								href={"/account/subscribe/" +
+								href={"/home/subscribe/" +
 									(plan?.stripe_price_id ?? "free_plan")}
 								class="btn btn-primary mx-auto w-[80%]"
 							>

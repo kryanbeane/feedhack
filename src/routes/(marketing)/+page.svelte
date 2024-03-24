@@ -69,7 +69,7 @@
 		},
 		{
 			name: "Billing Portal",
-			link: "/account/billing",
+			link: "/home/billing",
 			description:
 				"Self-serve portal for updating card, receipts, upgrades, downgrades and more.",
 			svgContent: `<path d="M7.5 18C8.32843 18 9 18.6716 9 19.5C9 20.3284 8.32843 21 7.5 21C6.67157 21 6 20.3284 6 19.5C6 18.6716 6.67157 18 7.5 18Z" stroke="#1C274C" stroke-width="1.5"/>
@@ -78,7 +78,7 @@
 		},
 		{
 			name: "User Dashboard",
-			link: "/account/settings",
+			link: "/home/settings",
 			description:
 				"User profile, user settings, update email/password, billing, and more.",
 			svgContent: `<circle cx="12" cy="12" r="3" stroke="#1C274C" stroke-width="1.5"/>

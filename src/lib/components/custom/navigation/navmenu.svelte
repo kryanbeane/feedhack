@@ -6,7 +6,7 @@
 	import { goto } from "$app/navigation";
 	import { toggleMode } from "mode-watcher";
 	import FeedbackPopover from "./feedback-popover.svelte";
-	import type { PageData } from "../../../../routes/(admin)/account/(menu)/$types";
+	import type { PageData } from "../../../../routes/(admin)/home/(menu)/$types";
 	export let data: PageData;
 
 	let { supabase } = data;
@@ -59,22 +59,16 @@
 			</div>
 		</DropdownMenu.Label>
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item href="/account/billing" class="hover:cursor-pointer">
+		<DropdownMenu.Item href="/home/billing" class="hover:cursor-pointer">
 			Billing
 		</DropdownMenu.Item>
-		<DropdownMenu.Item
-			href="/account/settings"
-			class="hover:cursor-pointer"
-		>
+		<DropdownMenu.Item href="/home/settings" class="hover:cursor-pointer">
 			Account
 		</DropdownMenu.Item>
-		<!-- { href: "/account/settings", title: "Settings", icon: Settings }, -->
+		<!-- { href: "/home/settings", title: "Settings", icon: Settings }, -->
 
 		<DropdownMenu.Separator />
-		<DropdownMenu.Item
-			href="/account/sign_out"
-			class="hover:cursor-pointer"
-		>
+		<DropdownMenu.Item href="/home/sign_out" class="hover:cursor-pointer">
 			Log Out
 			<!-- <DropdownMenu.Shortcut>⇧⌘Q</DropdownMenu.Shortcut> -->
 		</DropdownMenu.Item>

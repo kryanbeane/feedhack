@@ -19,7 +19,7 @@
 			<Button href="/pricing" variant="ghost" class="normal-case"
 				>Pricing</Button
 			>
-			<Button href="/account" variant="ghost" class="normal-case"
+			<Button href="/home" variant="ghost" class="normal-case"
 				>Account</Button
 			>
 		</nav>
@@ -47,7 +47,7 @@
 			>
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/pricing">Pricing</a></li>
-				<li><a href="/account">Account</a></li>
+				<li><a href="/home">Account</a></li>
 			</ul>
 		</div>
 	</div>
